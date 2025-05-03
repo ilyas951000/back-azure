@@ -7,6 +7,7 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 
+// Configuration de la connexion SQL
 const config = {
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
@@ -18,6 +19,12 @@ const config = {
   },
 };
 
+// Route racine pour vérifier que l'API est en ligne
+app.get("/", (req, res) => {
+  res.send("✅ Serveur backend en ligne !");
+});
+
+// Exemple de route métier
 app.get("/api/hello", async (req, res) => {
   try {
     await sql.connect(config);
@@ -29,6 +36,7 @@ app.get("/api/hello", async (req, res) => {
   }
 });
 
+// Démarrage du serveur
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Serveur backend démarré sur http://localhost:${port}`);

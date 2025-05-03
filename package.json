@@ -1,9 +1,11 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "description": "API Express + SQL déployée sur Azure App Service",
   "main": "index.js",
   "scripts": {
-  "test": "echo \"No tests specified, skipping.\" && exit 0"
+    "start": "node index.js",
+    "test": "echo \"No tests specified, skipping.\" && exit 0"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +16,5 @@
     "express": "^5.1.0",
     "mssql": "^11.0.1"
   },
-  "devDependencies": {},
-  "description": ""
+  "devDependencies": {}
 }
